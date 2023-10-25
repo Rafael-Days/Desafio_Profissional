@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/paciente")
 public class PacienteController {
-//
+
     @Autowired
     private PacienteRepository pacienteRepository;
 }
