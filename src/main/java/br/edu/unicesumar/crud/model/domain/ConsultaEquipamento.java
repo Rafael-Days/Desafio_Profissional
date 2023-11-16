@@ -10,5 +10,6 @@ public class ConsultaEquipamento extends Consulta{
     }
 
     public ConsultaEquipamento() {
+        super(idConsulta, editPaciente.getPaciente(), editPaciente.getMedico());
     }
 }

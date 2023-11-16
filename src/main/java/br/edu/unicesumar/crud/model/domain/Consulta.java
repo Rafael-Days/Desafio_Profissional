@@ -6,15 +6,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.NonNull;
 
-import java.time.LocalDate;
-
-    //Consulta realizada antes da consultaEquipamento
+//Consulta realizada antes da consultaEquipamento
 public class Consulta {
-    @NonNull
-    private LocalDate dataConsulta;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idConsulta;
+    private Long idConsulta;
     @NonNull
     private Medico medico;
     @NonNull
@@ -22,21 +18,16 @@ public class Consulta {
     @NonNull
     private Equipamentos equipamentos;
 
-    public Consulta(LocalDate dataConsulta, Integer idConsulta, Medico medico, Paciente paciente, Equipamentos equipamentos) {
-        this.dataConsulta = dataConsulta;
+    public Consulta(Long idConsulta, Medico medico, Paciente paciente, Equipamentos equipamentos) {
         this.idConsulta = idConsulta;
         this.medico = medico;
         this.paciente = paciente;
         this.equipamentos = equipamentos;
     }
 
-    public Consulta(){}
+    public Consulta(Long idConsulta, Paciente paciente, Medico medico){}
 
-    public LocalDate getDataConsulta() {
-        return dataConsulta;
-    }
-
-    public Integer getIdConsulta() {
+    public Long getIdConsulta() {
         return idConsulta;
     }
 
@@ -55,5 +46,7 @@ public class Consulta {
     public Equipamentos getEquipamentos(){ return equipamentos; }
 
 
-
-}
+        public Consulta save(Consulta pacienteNovo) {
+            return null;
+        }
+    }

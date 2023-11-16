@@ -10,7 +10,7 @@ public class Medico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idMedico;
+    private Long idMedico;
     @NonNull
     private String nome;
     @NonNull
@@ -19,7 +19,7 @@ public class Medico {
     @NonNull
     private Especializacao especializacao;
 
-    public Medico(String nome, int idade, Integer idMedico, Especializacao especializacao) {
+    public Medico(String nome, int idade, Long idMedico, Especializacao especializacao) {
         this.nome = nome;
         this.idade = idade;
         this.idMedico = idMedico;
@@ -40,11 +40,11 @@ public class Medico {
         return especializacao;
     }
 
-    public Integer getIdMedico() {
+    public Long getIdMedico() {
         return idMedico;
     }
 
-    public void setIdMedico(Integer idMedico) {
+    public void setIdMedico(Long idMedico) {
         this.idMedico = idMedico;
     }
 
