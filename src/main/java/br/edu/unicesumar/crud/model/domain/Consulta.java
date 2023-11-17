@@ -1,12 +1,11 @@
 package br.edu.unicesumar.crud.model.domain;
 
 import br.edu.unicesumar.crud.model.domain.enums.Equipamentos;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.NonNull;
 
-//Consulta realizada antes da consultaEquipamento
+@Entity
+@Table(name = "es_consulta")
 public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +25,10 @@ public class Consulta {
     }
 
     public Consulta(Long idConsulta, Paciente paciente, Medico medico){}
+
+    public Consulta() {
+
+    }
 
     public Long getIdConsulta() {
         return idConsulta;

@@ -1,54 +1,27 @@
 package br.edu.unicesumar.crud.model.domain;
 
-import br.edu.unicesumar.crud.model.domain.enums.Especializacao;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Entity
 @Table(name = "es_medico")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Medico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_medico")
     private Long idMedico;
     @NonNull
+    @Column(name = "nome")
     private String nome;
     @NonNull
-    private int idade;
+    @Column(name = "idade")
+    private Integer idade;
 
-    @NonNull
-    private Especializacao especializacao;
-
-    public Medico(String nome, int idade, Long idMedico, Especializacao especializacao) {
-        this.nome = nome;
-        this.idade = idade;
-        this.idMedico = idMedico;
-        this.especializacao = especializacao;
-    }
-
-    public Medico(){}
-
-    public String getNome() {
-        return nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public Especializacao getEspecializacao() {
-        return especializacao;
-    }
-
-    public Long getIdMedico() {
-        return idMedico;
-    }
-
-    public void setIdMedico(Long idMedico) {
-        this.idMedico = idMedico;
-    }
-
-    public void setEspecializacao(Especializacao especializacao) {
-        this.especializacao = especializacao;
-    }
 }
