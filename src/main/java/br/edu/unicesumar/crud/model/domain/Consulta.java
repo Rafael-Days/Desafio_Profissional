@@ -48,8 +48,7 @@ public class Consulta {
 
     public Equipamentos getEquipamentos(){ return equipamentos; }
 
-
-        public Consulta save(Consulta pacienteNovo) {
+    public Consulta save(Consulta pacienteNovo) {
             return null;
         }
     }
